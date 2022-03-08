@@ -26,3 +26,16 @@ formEl2.addEventListener("submit", (event) => {
 });
 
 //3. Sukurk input, kur vartotojas įves savo pilną vardą (t.y. vardą ir pavardę. Padaryk, kad JS pridėtų du h1 tag'us, viename - vardas, kitame - pavardė.
+
+const formEl3 = document.getElementById("form3");
+
+formEl3.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const inputEl3 = document.getElementById("fullName").value.trim().split(" ");
+  console.log(inputEl3);
+  const name = document.createElement("h1");
+  const lname = document.createElement("h1");
+  name.textContent = inputEl3[0];
+  lname.textContent = inputEl3[1];
+  document.body.append(name, lname);
+});
